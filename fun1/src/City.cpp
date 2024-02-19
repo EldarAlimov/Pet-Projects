@@ -14,3 +14,4 @@ double City::getLat() const {
 double City::getLon() const {
     return this -> lon;
 }
+

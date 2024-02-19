@@ -18,7 +18,7 @@ public:
     string getName() const;
     double getLat() const;
     double getLon() const;
-
+    int distance(City other) const;
 };
 
 
