@@ -8,9 +8,16 @@
 #include <string>
 
 using namespace std;
-class Cities {
+class City {
 private:
     string name;
+    double lat;
+    double lon;
+public:
+    City(string name, double lat, double lon);
+    string getName() const;
+    double getLat() const;
+    double getLon() const;
 
 };
 
