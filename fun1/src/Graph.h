@@ -8,6 +8,7 @@
 #include <map>
 #include <vector>
 #include "City.h"
+#include <utility>
 using namespace std;
 
 class Graph {
@@ -16,7 +17,7 @@ private:
     int numVertices;
 public:
     Graph(map<string,vector<pair<string,double>>> graph);
-    Graph(Graph graph, int distance);
+    Graph(vector<City> cities, int distance);
 };
 
 
