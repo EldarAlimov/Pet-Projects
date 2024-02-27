@@ -13,11 +13,16 @@ using namespace std;
 
 class Graph {
 private:
-    map<string, vector<pair<string,double>>> graph;
+    vector<pair<string, vector<pair<string,double>>>> graph;
     int numVertices;
 public:
     Graph(map<string,vector<pair<string,double>>> graph);
     Graph(vector<City> cities, int distance);
+    bool checkCon(string cityName1, string cityName2){
+        for (int i = 0; i < this->graph.size(); ++i) {
+
+        }
+    }
 };
 
 

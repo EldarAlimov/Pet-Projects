@@ -10,7 +10,7 @@ Graph::Graph(map<string,vector<pair<string,double>>> g){
 }
 
 Graph::Graph(vector<City> cities, int distance){
-    map<string,vector<pair<string,double>>> g;
+    vector<pair<string,vector<pair<string,double>>>> g;
 
     for (int i = 0; i < cities.size(); ++i) {
         vector<pair<string,double>> adj;
@@ -20,7 +20,7 @@ Graph::Graph(vector<City> cities, int distance){
             if(dis > distance) continue;
             adj.push_back(make_pair(cities[j].getName(),dis));
         }
-        g[cities[i].getName()] = adj;
+        g.push_back(make_pair(cities[i].getName(), adj));
     }
     this->graph = g;
     this->numVertices = g.size();
