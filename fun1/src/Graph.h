@@ -16,13 +16,10 @@ private:
     vector<pair<string, vector<pair<string,double>>>> graph;
     int numVertices;
 public:
-    Graph(map<string,vector<pair<string,double>>> graph);
+    Graph(vector<pair<string,vector<pair<string,double>>>> graph);
     Graph(vector<City> cities, int distance);
-    bool checkCon(string cityName1, string cityName2){
-        for (int i = 0; i < this->graph.size(); ++i) {
-
-        }
-    }
+    bool isConnected (string cityName1, string cityName2) const;
+    bool isExist (string cityName) const;
 };
 
 

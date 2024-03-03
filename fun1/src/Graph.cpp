@@ -4,7 +4,7 @@
 
 #include "Graph.h"
 
-Graph::Graph(map<string,vector<pair<string,double>>> g){
+Graph::Graph(vector<pair<string,vector<pair<string,double>>>> g){
     this ->graph = g;
     this ->numVertices = g.size();
 }
@@ -24,4 +24,23 @@ Graph::Graph(vector<City> cities, int distance){
     }
     this->graph = g;
     this->numVertices = g.size();
+}
+
+bool Graph::isExist(std::string cityName) const {
+    for (int i = 0; i < this->graph.size(); ++i) {
+        if(this->graph[i].first == cityName) return true;
+    }
+    return false;
+}
+
+
+bool Graph::isConnected(string cityName1, string cityName2) const{
+    for (int i = 0; i < this->graph.size(); ++i) {
+        if(this->graph[i].first == cityName1){
+            for (int j = 0; j < this->graph[i].second.size(); ++j) {
+                if(this->graph[i].second[j].first==cityName2) return true;
+            }
+        }
+    }
+    return false;
 }
