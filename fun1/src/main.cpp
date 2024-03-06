@@ -21,20 +21,26 @@ void checkConnect(Graph g){
 }
 
 
-vector<vector<string>> readCSV(const string& path){
-    ifstream file(path);
+vector<vector<string>> readCSV(const string& filePath) {
+    vector<vector<string>> result;
+    ifstream file(filePath);
     string line;
-    vector<string> cityInfo;
-    vector<vector<string>> content;
-    while(file && getline(file, line)){
+
+    while (getline(file, line)) {
+        vector<string> row;
         stringstream ss(line);
-        string cityInfo;
-        while(getline(ss, cityInfo, ',')){
-            cityInfo.push_back(cityInfo);
+        string cell;
+        for (int i = 0; i < 3; ++i) {
+            if (getline(ss, cell, ',')) {
+                row.push_back(cell);
+            }
+            else {
+                row.emplace_back("");
+            }
         }
+        result.push_back(row);
     }
-    file.close();
-    return content;
+    return result;
 }
 
 
@@ -53,8 +59,9 @@ int main()
     vector<vector<string>> input;
     vector<City> cities;
     input = readCSV("../files/kg.csv");
-    for (int i = 0; i < input.size(); ++i) {
-        cities.emplace_back(input[i][0], stod(input[i][1]), stod(input[i][2]));
+    cities.reserve(input.size());
+    for (auto & i : input) {
+        cities.emplace_back(i[0], stod(i[1]), stod(i[2]));
     }
 
 
