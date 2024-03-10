@@ -81,11 +81,11 @@ bool Graph::isConnected(const string cityName1, const string cityName2) const{
 }
 
 
-vector<string> Graph::shortestRoute(string cityName1, string cityName2){
+vector<string> Graph::shortestRoute(string cityName1, string cityName2) {
     vector<string> path;
-    if(!isConnected(cityName1, cityName2)) return path;
+    if (!isConnected(cityName1, cityName2)) return path;
 
-    vector<int> dist(numVertices,INT_MAX);
+    vector<int> dist(numVertices, INT_MAX);
     vector<string> prev(numVertices, "");
     vector<bool> visited(numVertices, false);
     dist[index[cityName1]] = 0;
@@ -101,7 +101,7 @@ vector<string> Graph::shortestRoute(string cityName1, string cityName2){
         }
         if (u == -1) break;
         visited[u] = true;
-        for (const auto& neighbor : graph[u].second) {
+        for (const auto &neighbor: graph[u].second) {
             int vIndex = -1;
             for (int j = 0; j < graph.size(); ++j) {
                 if (graph[j].first == neighbor.first) {
@@ -116,11 +116,31 @@ vector<string> Graph::shortestRoute(string cityName1, string cityName2){
         }
     }
 
-    for(string s = cityName2; s != cityName1; s = prev[index[s]]){
+    for (string s = cityName2; s != cityName1; s = prev[index[s]]) {
         path.push_back(s);
     }
     reverse(path.begin(), path.end());
     return path;
+}
+
+void Graph::dfs(std::string src, vector<bool> &visited) {
+    visited[index[src]] = true;
+    for(const auto& neighbor : graph[index[src]].second){
+        if(!visited[index[neighbor.first]]){
+            dfs(neighbor.first, visited);
+        }
+    }
+}
+
+bool Graph::isGraphConnected() const {
+    vector<bool> visited(numVertices, false);
+    stack<string> stack;
+    stack.push(this->graph[0].first);
+
+}
+
+Graph Graph::MST(Graph g) {
+    vector<pair<string, vector<pair<string, int>>>> ng;
 
 
 }
