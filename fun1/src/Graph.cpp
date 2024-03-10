@@ -10,6 +10,18 @@ Graph::Graph(vector<pair<string,vector<pair<string,int>>>> g){
     this ->numVertices = g.size();
 }
 
+vector<pair<string, vector<pair<string,int>>>> Graph::getGraph() {
+    return this->graph;
+}
+
+int Graph::getNum() {
+    return this->numVertices;
+}
+
+map<string, int> Graph::getIndex() {
+    return this->index;
+}
+
 Graph::Graph(vector<City> cities, int distance){
     vector<pair<string,vector<pair<string,int>>>> g;
     map<string,int> in;

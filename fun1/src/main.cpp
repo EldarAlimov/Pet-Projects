@@ -51,8 +51,39 @@ void createRoute(Graph g, vector<City> cities){
     }
     int d = dis(city1, city2, cities);
     g.createRoute(city1, city2, d);
+}
 
 
+vector<string> printFlight(string s, Graph g){
+    vector<pair<string, int>> cities = g.getGraph()[g.getIndex()[s]].second;
+    vector<string> st;
+    for (int i = 0; i < cities.size(); ++i) {
+        cout<<to_string(i+1) + ". " + cities[i].first + "(" + to_string(cities[i].second) + " km)."<<endl;
+        st.push_back(cities[i].first);
+    }
+    return st;
+}
+
+void browseNet(Graph g, vector<City> cities){
+    cout<<"Please enter the city from which you would like to start browsing"<<endl;
+    string start;
+    cin>>start;
+    if(!g.isExist(start)){
+        cout<<"There is no such city as " + start<<endl;
+        return;
+    }
+    cout<<"You are now in " + start + ", you can go to:"<<endl;
+    vector<string> s;
+    while(true){
+        s = printFlight(start, g);
+        cout<<to_string(s.size()+1) + ". Exit"<<endl;
+        cout<<endl;
+        cout<<"Please, chose where you want to go: "<<endl;
+        int nd;
+        cin>>nd;
+        if(nd == s.size()+1) return;
+        start = s[nd-1];
+    }
 
 }
 
@@ -118,6 +149,13 @@ int main()
             case 1:
                 checkConnect(fullGraph);
                 break;
+            case 2:
+                createRoute(fullGraph, cities);
+                break;
+            case 4:
+                browseNet(fullGraph, cities);
+                break;
+
             default:
                 cout<<"There is no such command"<<endl;
                 printActions();

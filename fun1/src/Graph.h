@@ -19,6 +19,9 @@ private:
     map<string, int> index;
     int numVertices;
 public:
+    int getNum();
+    map<string, int> getIndex();
+    vector<pair<string, vector<pair<string,int>>>> getGraph();
     Graph(vector<pair<string,vector<pair<string,int>>>> graph);
     Graph(vector<City> cities, int distance);
     void createRoute(string cityName1, string cityName2, int dis);
