@@ -81,6 +81,12 @@ bool Graph::isConnected(const string cityName1, const string cityName2) const{
 }
 
 
+void Graph::createRoute(string cityName1, string cityName2, int dis) {
+    this->graph[index[cityName1]].second.push_back({cityName2, dis});
+    this->graph[index[cityName2]].second.push_back({cityName1, dis});
+}
+
+
 vector<string> Graph::shortestRoute(string cityName1, string cityName2) {
     vector<string> path;
     if (!isConnected(cityName1, cityName2)) return path;

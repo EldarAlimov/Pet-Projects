@@ -21,6 +21,7 @@ private:
 public:
     Graph(vector<pair<string,vector<pair<string,int>>>> graph);
     Graph(vector<City> cities, int distance);
+    void createRoute(string cityName1, string cityName2, int dis);
     bool isConnected (string cityName1, string cityName2) const;
     bool isExist (string cityName) const;
     vector<string> shortestRoute(string cityName1, string cityName2);
