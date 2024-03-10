@@ -132,11 +132,16 @@ void Graph::dfs(std::string src, vector<bool> &visited) {
     }
 }
 
-bool Graph::isGraphConnected() const {
+bool Graph::isGraphConnected() {
     vector<bool> visited(numVertices, false);
-    stack<string> stack;
-    stack.push(this->graph[0].first);
+    dfs(graph[0].first, visited);
 
+    for(bool v : visited){
+        if(!v) {
+            return false;
+        }
+    }
+    return true;
 }
 
 Graph Graph::MST(Graph g) {

@@ -25,7 +25,7 @@ public:
     bool isExist (string cityName) const;
     vector<string> shortestRoute(string cityName1, string cityName2);
     void dfs(string src, vector<bool>& visited);
-    bool isGraphConnected() const;
+    bool isGraphConnected();
 
     Graph MST(Graph g);
 };
