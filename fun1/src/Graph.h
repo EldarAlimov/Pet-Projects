@@ -23,6 +23,7 @@ public:
     Graph(vector<City> cities, int distance);
     bool isConnected (string cityName1, string cityName2) const;
     bool isExist (string cityName) const;
+    vector<string> shortestRoute(string cityName1, string cityName2);
 };
 
 
