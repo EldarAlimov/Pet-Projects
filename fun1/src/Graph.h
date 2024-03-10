@@ -15,11 +15,11 @@ using namespace std;
 
 class Graph {
 private:
-    vector<pair<string, vector<pair<string,double>>>> graph;
+    vector<pair<string, vector<pair<string,int>>>> graph;
     map<string, int> index;
     int numVertices;
 public:
-    Graph(vector<pair<string,vector<pair<string,double>>>> graph);
+    Graph(vector<pair<string,vector<pair<string,int>>>> graph);
     Graph(vector<City> cities, int distance);
     bool isConnected (string cityName1, string cityName2) const;
     bool isExist (string cityName) const;
@@ -27,7 +27,7 @@ public:
     void dfs(string src, vector<bool>& visited);
     bool isGraphConnected();
 
-    Graph MST(Graph g);
+    Graph MST();
 };
 
 

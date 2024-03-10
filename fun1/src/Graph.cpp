@@ -5,16 +5,16 @@
 #include <algorithm>
 #include "Graph.h"
 
-Graph::Graph(vector<pair<string,vector<pair<string,double>>>> g){
+Graph::Graph(vector<pair<string,vector<pair<string,int>>>> g){
     this ->graph = g;
     this ->numVertices = g.size();
 }
 
 Graph::Graph(vector<City> cities, int distance){
-    vector<pair<string,vector<pair<string,double>>>> g;
+    vector<pair<string,vector<pair<string,int>>>> g;
     map<string,int> in;
     for (int i = 0; i < cities.size(); ++i) {
-        vector<pair<string,double>> adj;
+        vector<pair<string,int>> adj;
         for (int j = 0; j < cities.size(); ++j) {
             if(i==j) continue;
             double dis = cities[i].distance(cities[j]);
@@ -144,8 +144,48 @@ bool Graph::isGraphConnected() {
     return true;
 }
 
-Graph Graph::MST(Graph g) {
-    vector<pair<string, vector<pair<string, int>>>> ng;
+Graph Graph::MST() {
+    int n = numVertices;
+    vector<bool> visited(n, false);
+    vector<int> minWeight(n, INT_MAX);
+    vector<string> parent(n, "");
 
+    string startVertex = graph[0].first;
+    visited[0] = true;
 
+    for (const auto& neighbor : graph[0].second) {
+        int neighborIdx = index[neighbor.first];
+        minWeight[neighborIdx] = neighbor.second;
+        parent[neighborIdx] = startVertex;
+    }
+
+    vector<pair<string, vector<pair<string, int>>>> mst;
+    mst.emplace_back(startVertex, vector<pair<string, int>>());
+
+    for (size_t i = 1; i < n; ++i) {
+        int minWeightIdx = -1;
+        for (size_t j = 0; j < minWeight.size(); ++j) {
+            if (!visited[j] && (minWeightIdx == -1 || minWeight[j] < minWeight[minWeightIdx])) {
+                minWeightIdx = j;
+            }
+        }
+
+        string u = parent[minWeightIdx];
+        string v = graph[minWeightIdx].first;
+        int weight = minWeight[minWeightIdx];
+
+        mst.back().second.emplace_back(v, weight);
+        visited[minWeightIdx] = true;
+
+        for (const auto& neighbor : graph[minWeightIdx].second) {
+            int neighborIdx = index[neighbor.first];
+            if (!visited[neighborIdx] && neighbor.second < minWeight[neighborIdx]) {
+                minWeight[neighborIdx] = neighbor.second;
+                parent[neighborIdx] = v;
+            }
+        }
+    }
+
+    return mst;
 }
+
