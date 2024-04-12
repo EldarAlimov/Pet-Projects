@@ -6,6 +6,16 @@
 
 using namespace std;
 
+
+void createCSV(const string& filePath, const vector<City>& cities){
+    ofstream file(filePath);
+    for (const auto& city : cities){
+        file<<city.getLon()<<","<<city.getLat()<<","<<city.getName()<<endl;
+    }
+    file.close();
+}
+
+
 void checkConnect(Graph g){
     cout<<"Please, enter the origin city."<<endl;
     string city1;
