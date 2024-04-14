@@ -14,15 +14,6 @@ struct option{
 
 
 
-void readJson( string& filename, vector<option>& option){
-    ifstream ifs(filename);
-    stringstream buffer;
-    buffer << ifs.rdbuf();
-    auto json = nlohmann::json::parse(buffer.str());
-    finMax = json["financial budget"];
-    resMax = json["resource budget"];
-    ecoMax = json["ecological budget"];
-
 }
 
 
@@ -36,7 +27,21 @@ int main(){
 
     vector<option> ops; // vector of input options
     ops.push_back({0, 0, 0, 0});
-    readJson("../files/Data3.txt",finMax, resMax, ecoMax, ops);
+
+
+    ifstream ifs("../fun3/files/Data3.json");
+    int finMax, resMax, ecoMax; // our budget
+
+    auto json = nlohmann::json::parse(ifs);
+    finMax = json["financial_budget"].template get<int>()/10; // divide by 10 to optimize array
+    resMax = json["resource_budget"].template get<int>();
+    ecoMax = json["ecological_budget"].template get<int>();
+    for(auto op : json["options"]){
+        ops.push_back({op["cost"].template get<int>()/10,
+                          op["resources_required"].template get<int>(),
+                          op["impact_score"].template get<int>(),
+                          op["capacity_increase"].template get<int>()});
+    }
 
 
     vector<vector<vector<vector<int>>>> dp(ops.size(),
