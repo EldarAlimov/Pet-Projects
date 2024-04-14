@@ -5,8 +5,6 @@
 
 using namespace std;
 
-int finMax, resMax, ecoMax; // our budget
-
 struct option{
     int fin; // cost
     int res; // resources_required
@@ -40,7 +38,12 @@ int main(){
     ops.push_back({0, 0, 0, 0});
     readJson("../files/Data3.txt",finMax, resMax, ecoMax, ops);
 
-    int dp[ops.size()][finMax][resMax][ecoMax]; // main array
+
+    vector<vector<vector<vector<int>>>> dp(ops.size(),
+            vector<vector<vector<int>>>(finMax+1,
+                    vector<vector<int>>(resMax+1,
+                            vector<int>(ecoMax+1, 0)))
+    ); // main array
 
     // bottom-up cycle
     for(int i = 1; i < ops.size(); i++){
