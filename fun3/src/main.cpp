@@ -13,15 +13,19 @@ struct option{
 };
 
 
-
+ // top-down recursion
+int r(int fm, int rm, int em, int s, vector<option>& options) {
+    if (s == 1) return 0;
+    int uns = 0;
+    for (int i = 2; i <= s; ++i) {
+        option op = options[i - 1];
+        if (op.fin <= fm && op.res <= rm && op.eco <= em)
+            uns = max(op.capInc + r(fm- op.fin, rm - op.res, em - op.eco, s - 1, options),
+                      uns);
+    }
+    return uns;
 }
 
-
-
-void printTalbe(int **dp, )
-
-
- 
 
 int main(){
 
@@ -72,10 +76,11 @@ int main(){
             }
         }
     }
-    cout<<"The maximum amount of new airplanes is: " +
-            to_string(dp[ops.size()-1][finMax-1][resMax-1][ecoMax-1]) + "."<<endl;
 
-    while(cin)
+    cout<<"The maximum amount of new airplanes is: " +
+            to_string(dp[ops.size()-1][finMax][resMax][ecoMax]) + "."<<endl;
+    cout<<"The maximum amount of new airplanes is: " +
+          to_string(r(finMax, resMax, ecoMax, ops.size(), ops)) + "."<<endl;
 
     return 0;
 }
