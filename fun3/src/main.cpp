@@ -51,17 +51,23 @@ int main(){
     ); // main array
 
     // bottom-up cycle
+
+
     for(int i = 1; i < ops.size(); i++){
-        for(int j = 0; j <= finMax; j++){
-            for (int k = 0; k < resMax; ++k) {
-                for (int l = 0; l < ecoMax; ++l) {
-                    dp[i][j][k][l] = max(                   // build main array (to use new option or not to use)
-                    dp[i-1][j][k][l],                       // case we don't use new option
-                    dp[i]                                   // case we do use new option
-                    [ops[i].fin < j ? j-ops[i].fin : 0]     // index j for financial cost, prevent out of bounds
-                    [ops[i].res < k ? k-ops[i].res : 0]     // index k for resource budget
-                    [ops[i].eco < l ? l-ops[i].eco : 0]     // l for ecological impact
-                    + ops[i].capInc);                       // capacity increase due to usage of option
+        for(int j = 1; j <= finMax; j++){
+            for (int k = 1; k <= resMax; ++k) {
+                for (int l = 1; l <= ecoMax; ++l) {
+                    dp[i][j][k][l] = dp[i-1][j][k][l];
+                    if(ops[i].fin <= j && ops[i].res <=k && ops[i].eco <=l){
+                        dp[i][j][k][l] = max(                   // build main array (to use new option or not to use)
+                        dp[i][j][k][l],                       // case we don't use new option
+                        dp[i-1]                                   // case we do use new option
+                        [j-ops[i].fin]     // index j for financial cost, prevent out of bounds
+                        [k-ops[i].res]     // index k for resource budget
+                        [l-ops[i].eco]     // l for ecological impact
+                        + ops[i].capInc);
+                    }
+                                          // capacity increase due to usage of option
                 }
             }
         }
