@@ -128,7 +128,12 @@ public:
     }
 
     void exploitMines(int day) {
-        totalEarned += selectMine(day) -> extractGold();
+        bool isAvailable = false;
+        for (const auto& mine : mines) {
+            if (!mine->isUnderThreat()) isAvailable = true;
+        }
+        if(isAvailable)
+            totalEarned += selectMine(day) -> extractGold();
     }
 
     void printStatistics() const {
