@@ -111,15 +111,16 @@ public:
     }
 
     std::shared_ptr<Mine> selectMine(int day) {
-        std::vector<double> ucb(mines.size(), 0);
+        std::vector<double> ucb(mines.size(), 0); // vector stores value of interest for every mine
         for (int i = 0; i < mines.size(); ++i) {
             if (mines[i]->isUnderThreat()) continue;
             if (mines[i]->getDaysWorked() == 0) return mines[i];
-            ucb[i] = mines[i]->getTotalExtractedGold() / mines[i]->getDaysWorked() +
+            ucb[i] = mines[i]->getTotalExtractedGold() / mines[i]->getDaysWorked() + // main formula
                      sqrt((2*log2(day - mines[i]->getDaysWorked()))
                           / mines[i]->getDaysWorked());
         }
         int ans = 0;
+        // find the most interesting mine
         for (int i = 1; i < mines.size(); ++i) {
             if (ucb[i] > ucb[ans]) ans = i;
         }
@@ -128,6 +129,7 @@ public:
     }
 
     void exploitMines(int day) {
+        //check if there is at least one available mine
         bool isAvailable = false;
         for (const auto& mine : mines) {
             if (!mine->isUnderThreat()) isAvailable = true;
@@ -167,6 +169,7 @@ public:
         printStatistics();
     }
 
+    // Method that plays the game and returns the result (bool) for advanced testing system
     bool playGames(){
         Rebels rebels;
 
