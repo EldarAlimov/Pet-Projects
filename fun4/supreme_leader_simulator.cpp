@@ -162,14 +162,31 @@ public:
         printStatistics();
     }
 
+    bool playGames(){
+        Rebels rebels;
+
+        for (int day = 0; day < 365; day++) {
+            exploitMines(day);
+            rebels.move(day, mines);
+        }
+
+        return (totalEarned > targetEarnings);
+    }
+
 };
 
 int main() {
     int numMines = 10;
     double targetEarnings = 1000000;
+    int ans = 0;
+    int testSize = 10000;
+    for(int i = 0; i < testSize; ++i){
+        SupremeLeader leader(numMines, targetEarnings);
+        if(leader.playGames()) ans++;
+    }
+    std::cout<< "Win rate: " << (1.0*ans/testSize)*100<< "%."<<std::endl;
+    std::cout<<ans<< " out of " << testSize << std::endl;
 
-    SupremeLeader leader(numMines, targetEarnings);
-    leader.playGame();
 
     return 0;
 }

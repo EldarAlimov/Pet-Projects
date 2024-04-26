@@ -11,4 +11,4 @@ FetchContent_MakeAvailable(json)
 add_executable(Fun3 fun3/src/main.cpp)
 target_link_libraries(Fun3 PRIVATE nlohmann_json::nlohmann_json)
 
-add_executable(MAB supreme_leader_simulator.cpp)
+add_executable(MAB fun4/supreme_leader_simulator.cpp)
