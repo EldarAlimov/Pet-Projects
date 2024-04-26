@@ -111,12 +111,24 @@ public:
     }
 
     std::shared_ptr<Mine> selectMine(int day) {
-        //TODO: implement UCB algorithm
+        std::vector<double> ucb(mines.size(), 0);
+        for (int i = 0; i < mines.size(); ++i) {
+            if (mines[i]->isUnderThreat()) continue;
+            if (mines[i]->getDaysWorked() == 0) return mines[i];
+            ucb[i] = mines[i]->getTotalExtractedGold() / mines[i]->getDaysWorked() +
+                     sqrt((2*log2(day - mines[i]->getDaysWorked()))
+                          / mines[i]->getDaysWorked());
+        }
+        int ans = 0;
+        for (int i = 1; i < mines.size(); ++i) {
+            if (ucb[i] > ucb[ans]) ans = i;
+        }
+
+        return mines[ans];
     }
 
     void exploitMines(int day) {
-        //TODO: implement mine exploitation
-        selectMine(day);
+        totalEarned += selectMine(day) -> extractGold();
     }
 
     void printStatistics() const {
