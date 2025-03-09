@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42fffc34-f3fd-41aa-b841-e331d83d6a59" name="Changes" comment="OJ problems from Algorithm course" />
+    <list default="true" id="42fffc34-f3fd-41aa-b841-e331d83d6a59" name="Changes" comment="OJ problems from DataStructures course" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -126,7 +126,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741537107385</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="OJ problems from DataStructures course">
+      <option name="closed" value="true" />
+      <created>1741537194200</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1741537194200</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -136,6 +144,7 @@
     <MESSAGE value="Huffman encoding commit" />
     <MESSAGE value="Copying OOP labs" />
     <MESSAGE value="OJ problems from Algorithm course" />
-    <option name="LAST_COMMIT_MESSAGE" value="OJ problems from Algorithm course" />
+    <MESSAGE value="OJ problems from DataStructures course" />
+    <option name="LAST_COMMIT_MESSAGE" value="OJ problems from DataStructures course" />
   </component>
 </project>
