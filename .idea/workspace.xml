@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42fffc34-f3fd-41aa-b841-e331d83d6a59" name="Changes" comment="Huffman encoding commit" />
+    <list default="true" id="42fffc34-f3fd-41aa-b841-e331d83d6a59" name="Changes" comment="OJ problems from Algorithm course" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,15 +33,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/gignt/OneDrive/Документы/GitHub/Pet-Projects/Algorithms&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/gignt/OneDrive/Документы/GitHub/Pet-Projects/OJ problems"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\gignt\OneDrive\Документы\GitHub\Pet-Projects\OJ problems" />
       <recent name="C:\Users\gignt\OneDrive\Документы\GitHub\Pet-Projects\Algorithms" />
     </key>
   </component>
@@ -101,7 +102,23 @@
       <option name="project" value="LOCAL" />
       <updated>1741536234243</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Copying OOP labs">
+      <option name="closed" value="true" />
+      <created>1741536902991</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1741536902991</updated>
+    </task>
+    <task id="LOCAL-00007" summary="OJ problems from Algorithm course">
+      <option name="closed" value="true" />
+      <created>1741537040198</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1741537040198</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -109,6 +126,8 @@
     <MESSAGE value="Biginteger" />
     <MESSAGE value="Uno Game commit" />
     <MESSAGE value="Huffman encoding commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Huffman encoding commit" />
+    <MESSAGE value="Copying OOP labs" />
+    <MESSAGE value="OJ problems from Algorithm course" />
+    <option name="LAST_COMMIT_MESSAGE" value="OJ problems from Algorithm course" />
   </component>
 </project>
