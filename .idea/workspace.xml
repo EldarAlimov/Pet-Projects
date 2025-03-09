@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42fffc34-f3fd-41aa-b841-e331d83d6a59" name="Changes" comment="OJ problems from OOP course">
+    <list default="true" id="42fffc34-f3fd-41aa-b841-e331d83d6a59" name="Changes" comment="Copying PSC lab works">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -144,7 +144,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741537307953</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Copying PSC lab works">
+      <option name="closed" value="true" />
+      <created>1741537679215</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1741537679215</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -156,6 +164,7 @@
     <MESSAGE value="OJ problems from Algorithm course" />
     <MESSAGE value="OJ problems from DataStructures course" />
     <MESSAGE value="OJ problems from OOP course" />
-    <option name="LAST_COMMIT_MESSAGE" value="OJ problems from OOP course" />
+    <MESSAGE value="Copying PSC lab works" />
+    <option name="LAST_COMMIT_MESSAGE" value="Copying PSC lab works" />
   </component>
 </project>
