@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42fffc34-f3fd-41aa-b841-e331d83d6a59" name="Changes" comment="OJ problems from DataStructures course" />
+    <list default="true" id="42fffc34-f3fd-41aa-b841-e331d83d6a59" name="Changes" comment="OJ problems from OOP course">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -134,7 +136,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741537194200</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="OJ problems from OOP course">
+      <option name="closed" value="true" />
+      <created>1741537307953</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1741537307953</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -145,6 +155,7 @@
     <MESSAGE value="Copying OOP labs" />
     <MESSAGE value="OJ problems from Algorithm course" />
     <MESSAGE value="OJ problems from DataStructures course" />
-    <option name="LAST_COMMIT_MESSAGE" value="OJ problems from DataStructures course" />
+    <MESSAGE value="OJ problems from OOP course" />
+    <option name="LAST_COMMIT_MESSAGE" value="OJ problems from OOP course" />
   </component>
 </project>
