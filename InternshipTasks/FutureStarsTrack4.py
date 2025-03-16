@@ -11,8 +11,8 @@ tensor = torch.randint(0, 256, (SIZE, SIZE, SIZE, SIZE), dtype=torch.uint8)
 
 # Pygame setup
 pygame.init()
-WINDOW_SIZE = 800  # Increased size for margins and info
-grid_size = WINDOW_SIZE - 50  # Leave margin for text
+WINDOW_SIZE = 800
+grid_size = WINDOW_SIZE - 50
 CELL_SIZE = grid_size // SIZE
 screen = pygame.display.set_mode((WINDOW_SIZE, WINDOW_SIZE))
 pygame.display.set_caption("4D Tensor Viewer")
@@ -27,7 +27,6 @@ w, z = 0, 0
 
 
 def render_slice():
-    """Render the 2D slice tensor[w, z, :, :] with numbers, margins, and slice position"""
     screen.fill((0, 0, 0))
     slice_2d = tensor[w, z].numpy()
     for i in range(SIZE):
