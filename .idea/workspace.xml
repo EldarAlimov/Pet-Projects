@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42fffc34-f3fd-41aa-b841-e331d83d6a59" name="Changes" comment="OJ problems from Introduction to Programming course">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="42fffc34-f3fd-41aa-b841-e331d83d6a59" name="Changes" comment="Track 4 task for Future Stars internship" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -194,7 +192,23 @@
       <option name="project" value="LOCAL" />
       <updated>1741542551598</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Track 4 task for Future Stars internship">
+      <option name="closed" value="true" />
+      <created>1742113636514</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1742113636515</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Track 4 task for Future Stars internship">
+      <option name="closed" value="true" />
+      <created>1742113764552</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1742113764552</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -209,6 +223,7 @@
     <MESSAGE value="Copying PSC lab works" />
     <MESSAGE value="Copying Intro to Prog lab works" />
     <MESSAGE value="OJ problems from Introduction to Programming course" />
-    <option name="LAST_COMMIT_MESSAGE" value="OJ problems from Introduction to Programming course" />
+    <MESSAGE value="Track 4 task for Future Stars internship" />
+    <option name="LAST_COMMIT_MESSAGE" value="Track 4 task for Future Stars internship" />
   </component>
 </project>
